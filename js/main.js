@@ -35,7 +35,7 @@ window.addEventListener('load', function() {
       this.bloods = [];
       this.enemyThrown = null;
       this.frameTimer = 0;
-      this.frameInterval = 100;
+      this.frameInterval = 1000;
       //audio
       this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
       this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
