@@ -6,7 +6,7 @@ export default class InputHandler {
     //keyboard
     window.addEventListener('keydown', (e) => {
       switch(e.key){
-          case "ArrowLeft":
+        case "ArrowLeft":
           if (!e.repeat && this.keys.indexOf(e.key) === -1) {
             this.lastKey = "PRESS left";
             this.keys.push(e.key);
