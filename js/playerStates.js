@@ -229,7 +229,6 @@ export class Punch1 extends State {
     if (this.player.frameX === getStrikeFrame('PUNCH1')) {
       this.player.enemies.forEach(enemy => {
         if (strikeRange(this.player, enemy, this.player.direction) === true) {
-	  this.game.audioHit1.play()
 	  enemy.setState(states.HIT);
 	}
       });
