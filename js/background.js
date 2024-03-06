@@ -8,18 +8,19 @@ export default class Background {
     this.image = document.getElementById('kumite');
     this.frameY = 0;
     this.maxFrame = 5;
-		this.frameTimer = 0;
-		this.frameInterval = 1000/this.game.fps;
+    this.frameTimer = 0;
+    this.frameInterval = 1000/this.game.fps;
+    console.log(this.image);
   }
   update(deltaTime) {
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
-			if (this.frameY >= this.maxFrame) this.frameY = 0;
-			else this.frameY++;
-			this.frameTimer = 0;
-		} else {
-			this.frameTimer += deltaTime;
-		}
+      if (this.frameY >= this.maxFrame) this.frameY = 0;
+      else this.frameY++;
+      this.frameTimer = 0;
+    } else {
+      this.frameTimer += deltaTime;
+    }
   }
   draw(context){
     context.imageSmoothingEnabled = false;
