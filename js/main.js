@@ -6,6 +6,10 @@ import InputHandler from './input.js';
 import FightPanel from './fightPanel.js';
 
 window.addEventListener('load', function() {
+
+	$(document.body).click(function(){
+		alert('test');
+	});
   
 	const gameCanvas = document.getElementById('gameCanvas');
 	const gameCtx = gameCanvas.getContext('2d');
