@@ -37,7 +37,7 @@ export class Bow extends State {
     this.player.frameY = 0;
   }
   handleInput(input) {
-    if (this.player.frameX === 0) this.game.audioFight.play();
+    this.game.audioFight.play();
     if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.KAMAE);
     }
