@@ -374,7 +374,6 @@ export class Jumpkick extends State {
     if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
     } else {
-	    this.game.audioHit3.play();
       if (this.player.frameX === getStrikeFrame('JUMPKICK')) {
         this.player.enemies.forEach(enemy => {
           if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
