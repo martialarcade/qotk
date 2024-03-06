@@ -7,7 +7,7 @@ import FightPanel from './fightPanel.js';
 
 window.addEventListener('load', function() {
 
-	$(document.body).click(function(){
+	document.body.addEventListener("click", function (evt) {
 		alert('test');
 	});
   
