@@ -112,7 +112,6 @@ export class Standing extends State {
       }
     } else if (this.player.fightertype === 'h') {
       if (((input.lastKey === 'PRESS a' || input.lastKey === 'PRESS b') && ((this.player.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.player.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) || ((input.lastKey === 'PRESS left' || input.lastKey === 'PRESS right') && ((this.player.direction === 0 && input.keys.indexOf('a') > -1) || (this.player.direction === 1 && input.keys.indexOf('s') > -1)))) {
-        this.game.audioHit2.play();
         this.player.setState(states.BLOCK);
       } else if ((input.lastKey === 'PRESS c' && ((this.player.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.player.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) || input.keys.indexOf('d') > -1 && ((this.player.direction === 0 && input.lastKey === 'PRESS left') || (this.player.direction === 1 && input.lastKey === 'PRESS right'))) {
         this.player.enemies.forEach(enemy => {
