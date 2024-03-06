@@ -5,11 +5,11 @@ import Blood from './blood.js';
 import InputHandler from './input.js';
 import FightPanel from './fightPanel.js';
 
-window.addEventListener('load', function() {
-
-	document.body.addEventListener('click', function() {
+document.body.addEventListener('click', function() {
 		alert('test');
 	});
+
+window.addEventListener('load', function() {
   
 	const gameCanvas = document.getElementById('gameCanvas');
 	const gameCtx = gameCanvas.getContext('2d');
