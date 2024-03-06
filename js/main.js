@@ -7,63 +7,63 @@ import FightPanel from './fightPanel.js';
 
 window.addEventListener('load', function() {
   
-	const gameCanvas = document.getElementById('gameCanvas');
-	const gameCtx = gameCanvas.getContext('2d');
-	gameCanvas.width = 320;
-	gameCanvas.height = 224;
+  const gameCanvas = document.getElementById('gameCanvas');
+  const gameCtx = gameCanvas.getContext('2d');
+  gameCanvas.width = 320;
+  gameCanvas.height = 224;
   
-	const menuCanvas = document.getElementById('menuCanvas');
-	const menuCtx = menuCanvas.getContext('2d');
-	menuCanvas.width = 320;
-	menuCanvas.height = 224;
+  const menuCanvas = document.getElementById('menuCanvas');
+  const menuCtx = menuCanvas.getContext('2d');
+  menuCanvas.width = 320;
+  menuCanvas.height = 224;
   
-	class Game {
-		constructor(width, height) {
-			this.width = width;
-			this.height = height;
-			this.mode = 'kumite';
-			this.fps = 10;
-			this.background = new Background(this);
-			this.fighter0 = new Player(this, this.getFighters()[0], 'h', 0);
-			let fighters = this.shuffle(this.getFighters());
-			this.fighter1 = new Player(this, fighters[0], 'k1', 0);
-			this.fighter2 = new Player(this, [null, 1, 1, 1], 't2', 1);
-			this.fightPanel = new FightPanel(this);
-			this.input = new InputHandler(this, null);
-			this.start = false;
-			this.end = false;
-			this.bloods = [];
-			this.enemyThrown = null;
-			this.frameTimer = 0;
-			this.frameInterval = 100;
-			//audio
-			this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
-			this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
-			this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg']});
-			this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
-			this.audioFight = new Howl({src: ['./sfx/fight.m4a', './sfx/fight.ogg']});
-			this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
-			this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
-			this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
-		}
-		update(deltaTime) {
-			if (this.frameTimer > this.frameInterval) {
-				this.input.update(deltaTime);
-				this.frameTimer = 0;
-			} else {
-				this.frameTimer += deltaTime;
-			}
-			this.background.update(deltaTime);
-			this.fighter1.update(this.input, deltaTime);
-			if (this.mode === 'training') this.fighter2.update(this.input, deltaTime);
-			this.fighter0.update(this.input, deltaTime);
-			this.bloods.forEach(blood => {
-				blood.update(this.input, deltaTime);
-				if (blood.time >= 10) this.bloods.splice(this.bloods.indexOf(blood), 1);
-			});
-			if (this.mode === 'kumite') this.fightPanel.update(deltaTime);
-			if (this.fightPanel.timer.count == 0 || this.fighter0.health <= 0 || this.fighter1.health <= 0) this.end = true;
-		}
+  class Game {
+    constructor(width, height) {
+      this.width = width;
+      this.height = height;
+      this.mode = 'kumite';
+      this.fps = 10;
+      this.background = new Background(this);
+      this.fighter0 = new Player(this, this.getFighters()[0], 'h', 0);
+      let fighters = this.shuffle(this.getFighters());
+      this.fighter1 = new Player(this, fighters[0], 'k1', 0);
+      this.fighter2 = new Player(this, [null, 1, 1, 1], 't2', 1);
+      this.fightPanel = new FightPanel(this);
+      this.input = new InputHandler(this, null);
+      this.start = false;
+      this.end = false;
+      this.bloods = [];
+      this.enemyThrown = null;
+      this.frameTimer = 0;
+      this.frameInterval = 100;
+      //audio
+      this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
+      this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
+      this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg']});
+      this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
+      this.audioFight = new Howl({src: ['./sfx/fight.m4a', './sfx/fight.ogg']});
+      this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
+      this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
+      this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
+    }
+    update(deltaTime) {
+      if (this.frameTimer > this.frameInterval) {
+        this.input.update(deltaTime);
+        this.frameTimer = 0;
+      } else {
+        this.frameTimer += deltaTime;
+      }
+      this.background.update(deltaTime);
+      this.fighter1.update(this.input, deltaTime);
+      if (this.mode === 'training') this.fighter2.update(this.input, deltaTime);
+      this.fighter0.update(this.input, deltaTime);
+      this.bloods.forEach(blood => {
+        blood.update(this.input, deltaTime);
+        if (blood.time >= 10) this.bloods.splice(this.bloods.indexOf(blood), 1);
+      });
+      if (this.mode === 'kumite') this.fightPanel.update(deltaTime);
+      if (this.fightPanel.timer.count == 0 || this.fighter0.health <= 0 || this.fighter1.health <= 0) this.end = true;
+    }
     draw(context) {
       this.background.draw(context);
       if (this.fighter1.strike === 1) {
@@ -79,8 +79,8 @@ window.addEventListener('load', function() {
         this.fighter0.draw(context);
       }
       this.bloods.forEach(blood => {
-			  blood.draw(context);
-		  });
+        blood.draw(context);
+      });
       if (this.mode === 'kumite') this.fightPanel.draw(context);
     }
     addBlood(player) {
@@ -97,8 +97,8 @@ window.addEventListener('load', function() {
             else player.enemies[0]-=amount*2
           } else player.enemies[0].x+=amount;
           this.bloods.forEach(blood => {
-			      blood.x+=amount;
-		      });
+            blood.x+=amount;
+          });
         }
       } else if (direction === 'right') {
         if (player.x < this.width-player.width+10) {
@@ -110,8 +110,8 @@ window.addEventListener('load', function() {
             else player.enemies[0]+=amount*2
           } else player.enemies[0].x-=amount;
           this.bloods.forEach(blood => {
-			      blood.x-=amount;
-		      });
+            blood.x-=amount;
+          });
         }
       }
     }
@@ -127,8 +127,8 @@ window.addEventListener('load', function() {
       this.fighter0.reset(this.getFighters()[this.fighter0.no], 'h', 0);
       if (this.mode === 'kumite') {
         const fighters = this.shuffle(this.getFighters());
-	      var fighter1 = fighters[0];
-	      if (fighter1[0] === this.fighter1.no) fighter1 = fighters[1];
+        var fighter1 = fighters[0];
+        if (fighter1[0] === this.fighter1.no) fighter1 = fighters[1];
         this.fighter1.reset(fighter1, 'k1', 1);
       } else {
         this.fighter1.reset([null, 1, 1, 1], 't1', 1);
@@ -178,14 +178,14 @@ window.addEventListener('load', function() {
     lastTime = timeStamp;
     menuCtx.clearRect(0, 0, menuCanvas.width, menuCanvas.height);
     if (document.getElementById("pause").value == 1) {
-		  menuCanvas.style.visibility = "visible";
-		} else {
-		  menuCanvas.style.visibility = "hidden";
-		  gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
+      menuCanvas.style.visibility = "visible";
+    } else {
+      menuCanvas.style.visibility = "hidden";
+      gameCtx.clearRect(0, 0, gameCanvas.width, gameCanvas.height);
       game.update(deltaTime); 
-		}
-	  game.draw(gameCtx);
-	  menu.update(menuCtx);
+    }
+    game.draw(gameCtx);
+    menu.update(menuCtx);
     requestAnimationFrame(play);
   }
   play(0);
