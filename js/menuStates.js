@@ -187,6 +187,7 @@ export class Outfit extends State {
   handleInput(input, context) {
     if (input.lastKey === 'PRESS a') {
       this.game.audioStart.play();
+      this.game.audioFight.play();
       input.lastKey = '';
       this.game.fighter0.no = this.menu.selectFighter;
       this.game.fighter0.outfit = this.menu.selectOutfit;
@@ -200,6 +201,7 @@ export class Outfit extends State {
       this.menu.setState(4, context);
     } else if (input.lastKey === 'PRESS left' && this.menu.selectOutfit > 0) {
       this.game.audioOption.play();
+      this.game.audioFight.play();
       input.lastKey = '';
       this.menu.selectOutfit--;
       this.menu.selectOutfitX = (this.menu.width/2)-45-(this.menu.selectOutfit*90);
