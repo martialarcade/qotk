@@ -39,8 +39,8 @@ export default class Player {
     this.strike = 0;
     this.order = 0;
     this.health = 180;
-		this.frameTimer = 0;
-		this.frameInterval = 1000/this.game.fps;
+    this.frameTimer = 0;
+    this.frameInterval = 1000/this.game.fps;
     this.states = [
       new Bow(this, this.game),
       new Kamae(this, this.game),
@@ -74,19 +74,19 @@ export default class Player {
         this.frameX--;
       } else if (this.frameX >= this.maxFrame) {
         this.frameX = 0;
-			} else {
-			  this.frameX++;
+      } else {
+        this.frameX++;
       }
       //separate training fighters
       if ((this.fightertype === 't1' && (this.x >= this.game.fighter2.x-5 && this.x <= this.game.fighter2.x+5)) || (this.fightertype === 't2' && (this.x >= this.game.fighter1.x-5 && this.x <= this.game.fighter1.x+5))) {
         if (this.order === -1 && this.direction === 0) this.x += 5;
         else if (this.order === -1 && this.direction === 1) this.x -= 5;
       }
-			this.frameTimer = 0;
-		} else {
-			this.frameTimer += deltaTime;
-		}
-		this.currentState.handleInput(input);
+      this.frameTimer = 0;
+    } else {
+      this.frameTimer += deltaTime;
+    }
+    this.currentState.handleInput(input);
   }
   draw(context){
     if (this.game.start == true) {
