@@ -5,10 +5,6 @@ import Blood from './blood.js';
 import InputHandler from './input.js';
 import FightPanel from './fightPanel.js';
 
-document.body.addEventListener('click', function() {
-		alert('test');
-	});
-
 window.addEventListener('load', function() {
   
 	const gameCanvas = document.getElementById('gameCanvas');
