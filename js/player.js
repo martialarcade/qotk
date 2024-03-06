@@ -67,7 +67,7 @@ export default class Player {
   }
   update(input, deltaTime) {
     //audio
-    if (this.currentState.state === 'HIT' && this.frameX === 0) this.game.audioHit1.play();
+    if (this.currentState.state === 'HIT' && this.frameX === 0) this.game.audioSelect.play();
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
       //walk direction
