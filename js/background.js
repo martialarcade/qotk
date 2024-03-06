@@ -10,7 +10,6 @@ export default class Background {
     this.maxFrame = 5;
     this.frameTimer = 0;
     this.frameInterval = 1000/this.game.fps;
-    console.log(this.image);
   }
   update(deltaTime) {
     //sprite animation
