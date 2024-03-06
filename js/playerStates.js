@@ -228,7 +228,10 @@ export class Punch1 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('PUNCH1')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
+        if (strikeRange(this.player, enemy, this.player.direction) === true) {
+	  this.game.audioHit1.play()
+	  enemy.setState(states.HIT);
+	}
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -403,7 +406,6 @@ export class Hit extends State {
     this.game = game;
   }
   enter() {
-    this.game.audioHit1.play()
     this.player.strike = 0;
     this.player.frameX = 0;
     this.player.maxFrame = getHitMaxFrame(this.player.enemies[0].currentState.state);
