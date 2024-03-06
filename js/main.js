@@ -37,14 +37,14 @@ window.addEventListener('load', function() {
 			this.frameTimer = 0;
 			this.frameInterval = 100;
 			//audio
-			this.audioOption = new Howl({src: ['./sfx/option.ogg', './sfx/option.m4a']});
-			this.audioSelect= new Howl({src: ['./sfx/select.ogg', './sfx/select.m4a']});
-			this.audioIntro= new Howl({src: ['./sfx/intro.ogg', './sfx/intro.m4a']});
-			this.audioStart = new Howl({src: ['./sfx/start.ogg', './sfx/start.m4a']});
-			this.audioFight = new Howl({src: ['./sfx/fight.ogg', './sfx/fight.m4a']});
-			this.audioHit1 = new Howl({src: ['./sfx/hit1.ogg', './sfx/hit1.m4a']});
-			this.audioHit2 = new Howl({src: ['./sfx/hit2.ogg', './sfx/hit2.m4a']});
-			this.audioHit3 = new Howl({src: ['./sfx/hit3.ogg', './sfx/hit3.m4a']});
+			this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
+			this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
+			this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg']});
+			this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
+			this.audioFight = new Howl({src: ['./sfx/fight.m4a', './sfx/fight.ogg']});
+			this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
+			this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
+			this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
 		}
 		update(deltaTime) {
 			if (this.frameTimer > this.frameInterval) {
