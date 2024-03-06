@@ -35,31 +35,31 @@ window.addEventListener('load', function() {
       this.bloods = [];
       this.enemyThrown = null;
       this.frameTimer = 0;
-		  this.frameInterval = 100;
-		  //audio
+      this.frameInterval = 100;
+      //audio
       this.audioOption = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/bmv5b7pei0m35i4ds2n9z/qotk-option.ogg?rlkey=ptd0a2ms54qly6omdmhmfgn75', 'https://dl.dropbox.com/scl/fi/2fhdfd3msfw9dix97kue4/qotk-option.m4a?rlkey=qvxc7h0l7y8qhdk30bjrszz43']
+        src: ['./sfx/option.ogg', './sfx/option.m4a']
       });
       this.audioSelect= new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/8rk5vo7o3a9hyq7po81fl/qotk-select.ogg?rlkey=hc4hbrd0bfqtvpk9fz1ymw6bp', 'https://dl.dropbox.com/scl/fi/u274c9sz0qzjv2lpccjf9/qotk-select.m4a?rlkey=d0dxkeh8rf64iwpisrrsyky8f']
+        src: ['./sfx/select.ogg', './sfx/select.m4a']
       });
       this.audioIntro= new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/ypsc8d27kn6w4s7856np4/qotk-intro.ogg?rlkey=fkvrj1nkxdp08lzwanq0paqwm', 'https://dl.dropbox.com/scl/fi/mpxch5l0ppwfl1w34om0u/qotk-intro.m4a?rlkey=1fu8pl2z9dduc78pxq9adyog9']
+        src: ['./sfx/intro.ogg', './sfx/intro.m4a']
       });
       this.audioStart = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/ypsc8d27kn6w4s7856np4/qotk-intro.ogg?rlkey=fkvrj1nkxdp08lzwanq0paqwm', 'https://dl.dropbox.com/scl/fi/mpxch5l0ppwfl1w34om0u/qotk-intro.m4a?rlkey=1fu8pl2z9dduc78pxq9adyog9']
+        src: ['./sfx/start.ogg', './sfx/intro.m4a']
       });
       this.audioFight = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/1m90yki6o0hqyiczkc5dh/qotk-fight.ogg?rlkey=bbm6ikrygmn55yw50y06a3ws1', 'https://dl.dropbox.com/scl/fi/iek4xog9c3hb4v4wegxtt/qotk-fight.m4a?rlkey=s5mxo3krhf2kwiat8jgqwyqox']
+        src: ['./sfx/fight.ogg', './sfx/fight.m4a']
       });
       this.audioHit1 = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/o4asq95phbvl4t5a9oegs/qotk-hit1.ogg?rlkey=uv4mz8crsbz7uzoejann57vw3', 'https://dl.dropbox.com/scl/fi/p9d8p7encg470h3na7vsp/qotk-hit1.m4a?rlkey=6j0e1ynlku4ld5rtr8n1m5udz']
+        src: ['./sfx/hit1.ogg', './sfx/hit1.m4a']
       });
       this.audioHit2 = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/u2sgndnjxnspz05qgpepi/qotk-hit2.ogg?rlkey=p565wwhbfjcbi1dgclkftx8ih', 'https://dl.dropbox.com/scl/fi/k88ylcakt6ws7m035o7b9/qotk-hit2.m4a?rlkey=vtc0o23y4jut1o2w0x00b095t']
+        src: ['./sfx/hit2.ogg', './sfx/hit2.m4a']
       });
       this.audioHit3 = new Howl({
-        src: ['https://dl.dropbox.com/scl/fi/fua4w6oybdiugpflv7n61/qotk-hit3.ogg?rlkey=rkcrhw7zibrvuneumozamkxqv', 'https://dl.dropbox.com/scl/fi/z816i0jsyjqo9rxmlgjc4/qotk-hit3.m4a?rlkey=fuidxgpsrwu4czdivp5gy9xfh']
+        src: ['./sfx/hit3.ogg', './sfx/hit3.m4a']
       });
     }
     update(deltaTime) {
@@ -74,9 +74,9 @@ window.addEventListener('load', function() {
        if (this.mode === 'training') this.fighter2.update(this.input, deltaTime);
       this.fighter0.update(this.input, deltaTime);
       this.bloods.forEach(blood => {
-			   blood.update(this.input, deltaTime);
-			   if (blood.time >= 10) this.bloods.splice(this.bloods.indexOf(blood), 1);
-		  });
+        blood.update(this.input, deltaTime);
+        if (blood.time >= 10) this.bloods.splice(this.bloods.indexOf(blood), 1);
+      });
       if (this.mode === 'kumite') this.fightPanel.update(deltaTime);
       if (this.fightPanel.timer.count == 0 || this.fighter0.health <= 0 || this.fighter1.health <= 0) this.end = true;
     }
