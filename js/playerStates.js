@@ -117,13 +117,13 @@ export class Standing extends State {
           this.game.enemyThrown = throwMove(this.player, this.game.enemyThrown);
         });
       } else if (input.lastKey === 'PRESS a') {
-	game.audioHit1.play();
+	this.game.audioHit1.play();
         punch(this.player);
       } else if (input.lastKey === 'PRESS b') {
-        game.audioHit1.play();
+        this.game.audioHit1.play();
         kick(this.player);
       } else if (input.lastKey === 'PRESS c') {
-        game.audioHit1.play();
+        this.game.audioHit1.play();
         this.player.setState(states.JUMPKICK);
       } else {
         if (this.game.mode === 'training' && input.keys.indexOf('ArrowRight') > -1) this.player.direction = 0;
@@ -159,13 +159,13 @@ export class Walk extends State {
           this.game.enemyThrown = throwMove(this.player, this.game.enemyThrown);
         });
       } else if (input.lastKey === 'PRESS a') {
-	game.audioHit1.play();
+	this.game.audioHit1.play();
         punch(this.player);
       } else if (input.lastKey === 'PRESS b') {
-	game.audioHit1.play();
+	this.game.audioHit1.play();
         kick(this.player);
       } else if (input.lastKey === 'PRESS c') {
-	game.audioHit1.play();
+	this.game.audioHit1.play();
         this.player.setState(states.JUMPKICK);
       } else if (input.keys.indexOf('ArrowRight') > -1) {
         if (input.keys.indexOf('ArrowLeft') > -1) {
