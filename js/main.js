@@ -37,7 +37,7 @@ window.addEventListener('load', function() {
 			this.frameTimer = 0;
 			this.frameInterval = 100;
 			//audio
-			this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
+			this.audioOption = new Howl({src: ['./sfx/hit3.m4a', './sfx/option.ogg']});
 			this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
 			this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg']});
 			this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
