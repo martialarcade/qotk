@@ -95,9 +95,9 @@ export default class InputHandler {
 			this.keys.splice(this.keys.indexOf("ArrowRight"), 1);
 		});
 		aBtn.addEventListener('touchend', (e) => {
-		e.preventDefault();
-		this.lastKey = '';
-		this.keys.splice(this.keys.indexOf("a"), 1);
+			e.preventDefault();
+			this.lastKey = '';
+			this.keys.splice(this.keys.indexOf("a"), 1);
 		});
 		bBtn.addEventListener('touchend', (e) => {
 			e.preventDefault();
