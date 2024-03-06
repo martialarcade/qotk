@@ -40,7 +40,7 @@ export default class Player {
     this.order = 0;
     this.health = 180;
     this.frameTimer = 0;
-    this.frameInterval = 100/this.game.fps;
+    this.frameInterval = 1000/this.game.fps;
     this.states = [
       new Bow(this, this.game),
       new Kamae(this, this.game),
