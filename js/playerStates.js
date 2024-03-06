@@ -35,7 +35,6 @@ export class Bow extends State {
     this.player.frameX = 0;
     this.player.maxFrame = 10;
     this.player.frameY = 0;
-    this.game.audioFight.play();
   }
   handleInput(input) {
     if (this.player.frameX >= this.player.maxFrame) {
