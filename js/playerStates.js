@@ -117,7 +117,7 @@ export class Standing extends State {
           this.game.enemyThrown = throwMove(this.player, this.game.enemyThrown);
         });
       } else if (input.lastKey === 'PRESS a') {
-	      game.audioHit1.play();
+	game.audioHit1.play();
         punch(this.player);
       } else if (input.lastKey === 'PRESS b') {
         game.audioHit1.play();
@@ -127,7 +127,7 @@ export class Standing extends State {
         this.player.setState(states.JUMPKICK);
       } else {
         if (this.game.mode === 'training' && input.keys.indexOf('ArrowRight') > -1) this.player.direction = 0;
-		    else if (this.game.mode === 'training' && input.keys.indexOf('ArrowLeft') > -1) this.player.direction = 1;
+	else if (this.game.mode === 'training' && input.keys.indexOf('ArrowLeft') > -1) this.player.direction = 1;
         if (input.keys.indexOf('ArrowRight') > -1 || input.keys.indexOf('ArrowLeft') > -1) this.player.setState(states.WALK);
       }
     } else if (this.game.mode === 'kumite') enemyAi(this.player, this.game);
@@ -159,10 +159,13 @@ export class Walk extends State {
           this.game.enemyThrown = throwMove(this.player, this.game.enemyThrown);
         });
       } else if (input.lastKey === 'PRESS a') {
+	game.audioHit1.play();
         punch(this.player);
       } else if (input.lastKey === 'PRESS b') {
+	game.audioHit1.play();
         kick(this.player);
       } else if (input.lastKey === 'PRESS c') {
+	game.audioHit1.play();
         this.player.setState(states.JUMPKICK);
       } else if (input.keys.indexOf('ArrowRight') > -1) {
         if (input.keys.indexOf('ArrowLeft') > -1) {
