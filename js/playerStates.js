@@ -413,7 +413,7 @@ export class Hit extends State {
       if (this.player.frameX === 0) this.game.addBlood(this.player);
       if (this.game.mode === 'kumite' && this.player.health>0) this.player.health-=((this.player.enemies[0].attack-this.player.defense)*2);
     }
-    if (this.player.frameX === 0) getSfx(this.player.enemies[0].currentState.state, this.game);
+    if (this.player.frameX === 0 && this.player.frameTimer > this.player.frameInterval) getSfx(this.player.enemies[0].currentState.state, this.game);
   }
   handleInput(input) {
     if (this.player.health <= 0) {
