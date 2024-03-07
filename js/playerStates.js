@@ -475,6 +475,9 @@ export class Block extends State {
       this.player.maxFrame = 4;
     }
     this.player.frameY = 35 + this.player.direction;
+    if (this.player.frameTimer > this.player.frameInterval) {
+      this.game.audioBlock.play();
+    }
   }
   handleInput(input) {
     if (this.player.frameX >= this.player.maxFrame) {
