@@ -45,6 +45,10 @@ window.addEventListener('load', function() {
       this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
       this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
       this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
+      this.audioFall = new Howl({src: ['./sfx/fall.m4a', './sfx/fall.ogg']});
+      this.audioBlock = new Howl({src: ['./sfx/block.m4a', './sfx/block.ogg']});
+      this.audioYouWin = new Howl({src: ['./sfx/you-win.m4a', './sfx/you-win.ogg']});
+      this.audioYouLose = new Howl({src: ['./sfx/you-lose.m4a', './sfx/you-lose.ogg']});
     }
     update(deltaTime) {
       /*if (this.frameTimer > this.frameInterval) {
