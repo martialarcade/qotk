@@ -477,6 +477,7 @@ export class Block extends State {
     }
     this.player.frameY = 35 + this.player.direction;
     if (this.player.frameTimer > this.player.frameInterval) {
+	    console.log('block');
       this.game.audioBlock.play();
     }
   }
