@@ -127,10 +127,14 @@ window.addEventListener('load', function() {
     reset(mode) {
       this.mode = mode;
       var backgroundId = 'kumite';
+      var voice = 0;
       if (this.mode !== 'kumite') {
         var backgrounds = this.shuffle(this.getBackgrounds());
         backgroundId = backgrounds[0][1];
-        if (backgroundId === this.background.id) backgroundId = backgrounds[1][1];
+        voice = backgrounds[0][0];
+        if (backgroundId === this.background.id) {
+          backgroundId = backgrounds[1][1];
+          voice = backgrounds[1][0];
       }
       this.background.reset(backgroundId);
       this.fighter0.reset(this.getFighters()[this.fighter0.no], 'h', 0);
