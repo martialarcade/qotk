@@ -569,10 +569,8 @@ export class End extends State {
     if (this.player.health > this.player.enemies[0].health) {
       this.player.frameY = 37;
       this.player.strike = 1;
-      if (this.player.frameTimer > this.player.frameInterval) this.game.audioYouWin.play();
     } else {
       this.player.frameY = 38;
-      if (this.player.frameTimer > this.player.frameInterval) this.game.audioYouLose.play();
     }
   }
   handleInput(input) {
