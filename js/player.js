@@ -88,8 +88,10 @@ export default class Player {
       } else if (this.currentState.state === 'THROWN') {
         if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'END' && this.fightertype === 'h') {
-        if (this.health > this.enemies[0].health) this.game.audioYouWin.play();
-        else this.game.audioYouLose.play();
+        if (this.frameX === 0) {
+          if (this.health > this.enemies[0].health) this.game.audioYouWin.play();
+          else this.game.audioYouLose.play();
+	}
       }
       //walk direction
       if (this.fightertype === 'h' && this.currentState.state === 'WALK' && this.game.mode === 'kumite' && ((this.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) {
