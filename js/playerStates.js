@@ -614,13 +614,6 @@ function collision(player, enemy, direction) {
   else return false;
 }
 
-function strikeRange(player, enemy, direction) {
-  var result = false;
-  if (direction === 0 && player.x <= enemy.x && player.x+(player.width/2)+60 >= enemy.x+(enemy.width/2)) result = true;
-  else if (direction === 1 && player.x >= enemy.x && player.x+(player.width/2)-60 <= enemy.x+(enemy.width/2)) result = true;
-  return result;
-}
-
 function enemyBlock(enemy) {
   var rand = Math.floor(Math.random() * 3);
   if (rand === 0) return true;
