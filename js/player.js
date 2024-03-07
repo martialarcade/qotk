@@ -69,9 +69,14 @@ export default class Player {
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
       //audio
+      if (this.currentState.state === 'PUNCH1' || this.currentState.state === 'PUNCH2' || this.currentState.state === 'PUNCH3' || this.currentState.state === 'KICK1' || this.currentState.state === 'KICK2' || this.currentState.state === 'KICK3' || this.currentState.state === 'JUMPKICK') {
+      	if (this.player.enemies[0].currentState.state === 'BLOCK') {
+	  this.game.audioBlock.play();
+	}
+      }
       if (this.currentState.state === 'FALL') {
         if (this.frameX === 0) this.game.audioHit3.play();
-	      else if (this.frameX === 3) this.game.audioFall.play();
+	else if (this.frameX === 3) this.game.audioFall.play();
       }
       if (this.currentState.state === 'THROWN') {
         if (this.frameX === 3) this.game.audioFall.play();
