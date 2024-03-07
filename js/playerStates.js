@@ -410,7 +410,6 @@ export class Hit extends State {
     if (this.player.frameTimer > this.player.frameInterval) {
       if (this.player.frameX === 0) this.game.addBlood(this.player);
       if (this.game.mode === 'kumite' && this.player.health>0) this.player.health-=((this.player.enemies[0].attack-this.player.defense)*2);
-      getSfx(this.player.enemies[0].currentState.state, this.game);
     }
   }
   handleInput(input) {
@@ -640,11 +639,6 @@ function getStrikeFrame(state) {
 function getHitMaxFrame(state) {
   if (state === 'PUNCH1' || state === 'KICK1' || state === 'JUMPKICK') return 2;
   else if (state === 'PUNCH2' || state === 'KICK2') return 3;
-}
-
-function getSfx(state, game) {
-  if (state === 'PUNCH1' || state === 'KICK1') game.audioHit1.play();
-  else if (state === 'PUNCH2' || state === 'KICK2' || state === 'JUMPKICK') game.audioHit2.play();
 }
 
 function getHitFrameY(state, no, direction) {
