@@ -27,6 +27,7 @@ export default class Player {
     this.defense = profile[1];
     this.attack = profile[2];
     this.speed = profile[3];
+    this.voice = profile[4];
     this.outfit = 0;
     this.width = 151;
     this.height = 151;
@@ -128,6 +129,7 @@ export default class Player {
     this.defense = profile[1];
     this.attack = profile[2];
     this.speed = profile[3];
+    this.voice = profile[4];
     this.fightertype = fightertype;
     this.direction = direction;
     if (this.fightertype === 'h') {
