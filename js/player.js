@@ -70,10 +70,10 @@ export default class Player {
     if (this.frameTimer > this.frameInterval) {
       //audio
       if (this.currentState.state === 'HIT') {
-            if (this.frameX === 0) {
-                  if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
-                  else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
-            }
+				if (this.frameX === 0) {
+					if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
+					else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
+				}
       } else if (this.currentState.state === 'BLOCK') {
         if (this.frameX === 0) {
           if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioBlock.play();
@@ -84,10 +84,13 @@ export default class Player {
         }
       } else if (this.currentState.state === 'FALL') {
         if (this.frameX === 0) this.game.audioHit3.play();
-            else if (this.frameX === 3) this.game.audioFall.play();
+				else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'THROWN') {
         if (this.frameX === 3) this.game.audioFall.play();
-      }
+      } else if (this.currentState.state === 'END' && this.fightertype === 'h') {
+				if (this.health > this.enemies[0].health) this.game.audioYouWin.play();
+				else this.game.audioYouLose.play();
+			}
       //walk direction
       if (this.fightertype === 'h' && this.currentState.state === 'WALK' && this.game.mode === 'kumite' && ((this.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) {
         if (this.frameX <= 0) this.frameX = this.maxFrame+1;
