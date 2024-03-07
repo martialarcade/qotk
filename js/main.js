@@ -144,8 +144,8 @@ window.addEventListener('load', function() {
         if (fighter1[0] === this.fighter1.no) fighter1 = fighters[1];
         this.fighter1.reset(fighter1, 'k1', 1);
       } else {
-        this.fighter1.reset([null, 1, 1, 1, backgroundId], 't1', 1);
-        this.fighter2.reset([null, 1, 1, 1, backgroundId], 't2', 0);
+        this.fighter1.reset([null, 1, 1, 1, voice], 't1', 1);
+        this.fighter2.reset([null, 1, 1, 1, voice], 't2', 0);
       }
       this.fightPanel.reset();
       this.start = true;
