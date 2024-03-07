@@ -69,7 +69,7 @@ export default class Player {
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
       //audio
-      if (this.currentState.state === 'FALL')
+      if (this.currentState.state === 'FALL') {
         if (this.frameX === 0) this.game.audioHit3.play();
 	else if (this.frameX === 3) this.game.audioFall.play();
       }
