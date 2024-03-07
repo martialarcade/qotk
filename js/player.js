@@ -68,6 +68,11 @@ export default class Player {
   update(input, deltaTime) {
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
+      //audio
+      if (this.currentState.state === 'FALL')
+        if (this.frameX === 0) this.game.audioHit3.play();
+	      else if (this.frameX === 3) this.game.audioFall.play();
+      }
       //walk direction
       if (this.fightertype === 'h' && this.currentState.state === 'WALK' && this.game.mode === 'kumite' && ((this.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) {
         if (this.frameX <= 0) this.frameX = this.maxFrame+1;
@@ -95,11 +100,11 @@ export default class Player {
     }
   }
   setState(state) {
-	  this.currentState = this.states[state];
-	  this.currentState.enter();
-	}
-	reset(profile, fightertype, direction) {
-	  this.no = profile[0];
+    this.currentState = this.states[state];
+    this.currentState.enter();
+  }
+  reset(profile, fightertype, direction) {
+    this.no = profile[0];
     this.defense = profile[1];
     this.attack = profile[2];
     this.speed = profile[3];
@@ -127,11 +132,11 @@ export default class Player {
     this.strike = 0;
     this.order = 0;
     this.health = 180;
-		this.frameTimer = 0;
+    this.frameTimer = 0;
     if (this.fightertype === 'h') {
       this.enemies = [this.game.fighter1];
       if (this.game.mode === 'training') this.enemies.push(this.game.fighter2);
     } else this.enemies = [this.game.fighter0];
     this.endLoop = 0;
-	}
+  }
 }
