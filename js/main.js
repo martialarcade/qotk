@@ -135,6 +135,7 @@ window.addEventListener('load', function() {
         if (backgroundId === this.background.id) {
           backgroundId = backgrounds[1][1];
           voice = backgrounds[1][0];
+        }
       }
       this.background.reset(backgroundId);
       this.fighter0.reset(this.getFighters()[this.fighter0.no], 'h', 0);
