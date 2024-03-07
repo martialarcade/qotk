@@ -129,8 +129,8 @@ window.addEventListener('load', function() {
       var backgroundId = 'kumite';
       if (this.mode !== 'kumite') {
         var backgrounds = this.shuffle(this.getBackgrounds());
-        backgroundId = backgrounds[0];
-        if (backgroundId === this.background.id) backgroundId = backgrounds[1];
+        backgroundId = backgrounds[0][1];
+        if (backgroundId === this.background.id) backgroundId = backgrounds[1][1];
       }
       this.background.reset(backgroundId);
       this.fighter0.reset(this.getFighters()[this.fighter0.no], 'h', 0);
@@ -173,7 +173,11 @@ window.addEventListener('load', function() {
       ];
     }
     getBackgrounds() {
-      return ['dojo', 'dojang', 'gym'];
+      return [
+        [0, 'dojo'],
+        [1, 'dojang'],
+        [2, 'gym']
+      ];
     }
   }
   
