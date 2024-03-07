@@ -70,13 +70,21 @@ export default class Player {
     if (this.frameTimer > this.frameInterval) {
       //audio
       if (this.currentState.state === 'HIT') {
-        if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
-  	else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
+	      if (this.frameX === 0) {
+          if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
+  	      else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
+        }
       } else if (this.currentState.state === 'BLOCK') {
-        if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'PUNCH3' || this.enemies[0].currentState.state === 'KICK1' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'KICK3' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioBlock.play();
+        if (this.frameX === 0) {
+          if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioBlock.play();
+        } else if (this.frameX === 1) {
+          if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioBlock.play();
+        } else if (this.frameX === 2) {
+          if (this.enemies[0].currentState.state === 'PUNCH3' || this.enemies[0].currentState.state === 'KICK3') this.game.audioBlock.play();
+        }
       } else if (this.currentState.state === 'FALL') {
         if (this.frameX === 0) this.game.audioHit3.play();
-	else if (this.frameX === 3) this.game.audioFall.play();
+	      else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'THROWN') {
         if (this.frameX === 3) this.game.audioFall.play();
       }
