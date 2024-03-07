@@ -72,8 +72,13 @@ export default class Player {
       //audio
       if (this.currentState.state === 'HIT') {
         if (this.frameX === 0) {
-          if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
-          else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
+          if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') {
+	    this.game.audioHit1.play();
+	    this.game.audioImpact1[this.voice].play();
+	  } else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') {
+	    this.game.audioHit2.play();
+	    this.game.audioImpact2[this.voice].play();
+	  }
 	}
       } else if (this.currentState.state === 'BLOCK' && this.strikeRange(this, this.enemies[0], this.direction) === true) {
         if (this.frameX === 0) {
@@ -84,10 +89,14 @@ export default class Player {
           if (this.enemies[0].currentState.state === 'PUNCH3' || this.enemies[0].currentState.state === 'KICK3') this.game.audioBlock.play();
         }
       } else if (this.currentState.state === 'FALL') {
-        if (this.frameX === 0) this.game.audioHit3.play();
+        if (this.frameX === 0) {
+	  this.game.audioHit3.play();
+	  this.game.audioImpact3[this.voice].play();
+	}
         else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'THROWN') {
-        if (this.frameX === 3) this.game.audioFall.play();
+	if (this.frameX === 0) this.game.audioImpact3[this.voice].play();
+        else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'END' && this.fightertype === 'h') {
         if (this.frameX === 0) {
           if (this.health > this.enemies[0].health) this.game.audioYouWin.play();
