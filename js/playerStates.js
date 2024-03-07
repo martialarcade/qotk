@@ -441,6 +441,7 @@ export class Fall extends State {
       if (this.player.frameX === 0) this.game.addBlood(this.player);
       if (this.game.mode === 'kumite' && this.player.health>0) this.player.health-=((this.player.enemies[0].attack-this.player.defense)*2);
       this.game.audioHit3.play();
+      if (this.player.frameX === 3) this.game.audioFall.play();
     }
   }
   handleInput(input) {
@@ -517,6 +518,9 @@ export class Thrown extends State {
     this.player.maxFrame = 6;
     this.player.frameY = 11 + this.player.direction;
     if (this.game.mode === 'kumite' && this.player.health>0) this.player.health-=((this.player.enemies[0].attack-this.player.defense)*3);
+    if (this.player.frameX === 3 && this.player.frameTimer > this.player.frameInterval) {
+      this.game.audioFall.play();
+    }
   }
   handleInput(input) {
     if ((this.player.direction === 0 && this.player.x+this.player.width <= this.game.width+50) || (this.player.direction === 1 && this.player.x >= -50)) {
