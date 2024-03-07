@@ -47,6 +47,19 @@ window.addEventListener('load', function() {
       this.audioBlock = new Howl({src: ['./sfx/block.m4a', './sfx/block.ogg']});
       this.audioYouWin = new Howl({src: ['./sfx/you-win.m4a', './sfx/you-win.ogg']});
       this.audioYouLose = new Howl({src: ['./sfx/you-lose.m4a', './sfx/you-lose.ogg']});
+      //audio impact
+      this.audioImpact_0_1 = new Howl({src: ['./sfx/impact-0-1.m4a', './sfx/impact-0-1.ogg']});
+      this.audioImpact_1_1 = new Howl({src: ['./sfx/impact-1-1.m4a', './sfx/impact-1-1.ogg']});
+      this.audioImpact_2_1 = new Howl({src: ['./sfx/impact-2-1.m4a', './sfx/impact-2-1.ogg']});
+      this.audioImpact1 = [this.audioImpact_0_1, this.audioImpact_1_1, this.audioImpact_2_1];
+      this.audioImpact_0_2 = new Howl({src: ['./sfx/impact-0-2.m4a', './sfx/impact-0-2.ogg']});
+      this.audioImpact_1_2 = new Howl({src: ['./sfx/impact-1-2.m4a', './sfx/impact-1-2.ogg']});
+      this.audioImpact_2_2 = new Howl({src: ['./sfx/impact-2-2.m4a', './sfx/impact-2-2.ogg']});
+      this.audioImpact2 = [this.audioImpact_0_1, this.audioImpact_1_1, this.audioImpact_2_1];
+      this.audioImpact_0_3 = new Howl({src: ['./sfx/impact-0-3.m4a', './sfx/impact-0-3.ogg']});
+      this.audioImpact_1_3 = new Howl({src: ['./sfx/impact-1-3.m4a', './sfx/impact-1-3.ogg']});
+      this.audioImpact_2_3 = new Howl({src: ['./sfx/impact-2-3.m4a', './sfx/impact-2-3.ogg']});
+      this.audioImpact3 = [this.audioImpact_0_1, this.audioImpact_1_1, this.audioImpact_2_1];
     }
     update(deltaTime) {
       this.background.update(deltaTime);
