@@ -445,8 +445,6 @@ export class Fall extends State {
     if (this.player.frameTimer > this.player.frameInterval) {
       if (this.player.frameX === 0) this.game.addBlood(this.player);
       if (this.game.mode === 'kumite' && this.player.health>0) this.player.health-=((this.player.enemies[0].attack-this.player.defense)*2);
-      this.game.audioHit3.play();
-      if (this.player.frameX === 3) this.game.audioFall.play();
     }
   }
   handleInput(input) {
