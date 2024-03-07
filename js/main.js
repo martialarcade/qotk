@@ -40,11 +40,11 @@ window.addEventListener('load', function() {
       this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg'], volume: 2});
       this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
       this.audioFight = new Howl({src: ['./sfx/fight.m4a', './sfx/fight.ogg']});
-      this.audioBlock = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
+      this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
       this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
-      this.audioFall = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
-      this.audioHit3 = new Howl({src: ['./sfx/fall.m4a', './sfx/fall.ogg']});
-      this.audioHit1 = new Howl({src: ['./sfx/block.m4a', './sfx/block.ogg']});
+      this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
+      this.audioFall = new Howl({src: ['./sfx/fall.m4a', './sfx/fall.ogg']});
+      this.audioBlock = new Howl({src: ['./sfx/block.m4a', './sfx/block.ogg']});
       this.audioYouWin = new Howl({src: ['./sfx/you-win.m4a', './sfx/you-win.ogg']});
       this.audioYouLose = new Howl({src: ['./sfx/you-lose.m4a', './sfx/you-lose.ogg']});
     }
