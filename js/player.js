@@ -70,8 +70,8 @@ export default class Player {
     if (this.frameTimer > this.frameInterval) {
       //audio
       if (this.currentState.state === 'HIT') {
-        if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') game.audioHit1.play();
-  	else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') game.audioHit2.play();
+        if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
+  	else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
       } else if (this.currentState.state === 'BLOCK') {
         if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'PUNCH3' || this.enemies[0].currentState.state === 'KICK1' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'KICK3' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioBlock.play();
       } else if (this.currentState.state === 'FALL') {
