@@ -74,7 +74,7 @@ export default class Player {
           if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioHit1.play();
           else if (this.enemies[0].currentState.state === 'PUNCH2' || this.enemies[0].currentState.state === 'KICK2' || this.enemies[0].currentState.state === 'JUMPKICK') this.game.audioHit2.play();
 	}
-      } else if (this.currentState.state === 'BLOCK') {
+      } else if (this.currentState.state === 'BLOCK' && this.strikeRange(this, this.enemies[0], this.direction) === true) {
         if (this.frameX === 0) {
           if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') this.game.audioBlock.play();
         } else if (this.frameX === 1) {
@@ -158,5 +158,11 @@ export default class Player {
       if (this.game.mode === 'training') this.enemies.push(this.game.fighter2);
     } else this.enemies = [this.game.fighter0];
     this.endLoop = 0;
+  }
+  strikeRange(player, enemy, direction) {
+    var result = false;
+    if (direction === 0 && player.x <= enemy.x && player.x+(player.width/2)+60 >= enemy.x+(enemy.width/2)) result = true;
+    else if (direction === 1 && player.x >= enemy.x && player.x+(player.width/2)-60 <= enemy.x+(enemy.width/2)) result = true;
+    return result;
   }
 }
