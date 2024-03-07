@@ -34,8 +34,6 @@ window.addEventListener('load', function() {
       this.end = false;
       this.bloods = [];
       this.enemyThrown = null;
-      //this.frameTimer = 0;
-      //this.frameInterval = 100;
       //audio
       this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
       this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
@@ -51,12 +49,6 @@ window.addEventListener('load', function() {
       this.audioYouLose = new Howl({src: ['./sfx/you-lose.m4a', './sfx/you-lose.ogg']});
     }
     update(deltaTime) {
-      /*if (this.frameTimer > this.frameInterval) {
-        this.input.update(deltaTime);
-        this.frameTimer = 0;
-      } else {
-        this.frameTimer += deltaTime;
-      }*/
       this.background.update(deltaTime);
       this.fighter1.update(this.input, deltaTime);
       if (this.mode === 'training') this.fighter2.update(this.input, deltaTime);
