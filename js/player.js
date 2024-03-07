@@ -71,7 +71,7 @@ export default class Player {
       //audio
       if (this.currentState.state === 'FALL')
         if (this.frameX === 0) this.game.audioHit3.play();
-	      else if (this.frameX === 3) this.game.audioFall.play();
+	else if (this.frameX === 3) this.game.audioFall.play();
       }
       //walk direction
       if (this.fightertype === 'h' && this.currentState.state === 'WALK' && this.game.mode === 'kumite' && ((this.direction === 0 && input.keys.indexOf('ArrowLeft') > -1) || (this.direction === 1 && input.keys.indexOf('ArrowRight') > -1))) {
