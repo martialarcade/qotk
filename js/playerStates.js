@@ -228,8 +228,7 @@ export class Punch1 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('PUNCH1')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.HIT);
-	else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -253,8 +252,7 @@ export class Punch2 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('PUNCH2')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.HIT);
-        else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -278,8 +276,7 @@ export class Punch3 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('PUNCH3')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.FALL);
-        else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.FALL);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -303,8 +300,7 @@ export class Kick1 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('KICK1')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.HIT);
-        else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -328,8 +324,7 @@ export class Kick2 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('KICK2')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.HIT);
-	else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -353,8 +348,7 @@ export class Kick3 extends State {
   handleInput(input) {
     if (this.player.frameX === getStrikeFrame('KICK3')) {
       this.player.enemies.forEach(enemy => {
-        if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.FALL);
-	else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+        if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.FALL);
       });
     } else if (this.player.frameX >= this.player.maxFrame) {
       this.player.setState(states.STANDING);
@@ -382,8 +376,7 @@ export class Jumpkick extends State {
     } else {
       if (this.player.frameX === getStrikeFrame('JUMPKICK')) {
         this.player.enemies.forEach(enemy => {
-          if (strikeRange(this.player, enemy, this.player.direction) === 'hit') enemy.setState(states.HIT);
-	  else if (strikeRange(this.player, enemy, this.player.direction) === 'block' && this.player.frameTimer > this.player.frameInterval) this.game.audioBlock.play();
+          if (strikeRange(this.player, enemy, this.player.direction) === true) enemy.setState(states.HIT);
         });
       }
       if (this.player.fightertype === 'h') {
@@ -625,13 +618,10 @@ function collision(player, enemy, direction) {
 }
 
 function strikeRange(player, enemy, direction) {
-  var result = null;
-  if (direction === 0 && player.x <= enemy.x && player.x+(player.width/2)+60 >= enemy.x+(enemy.width/2)) {
-    if (enemy.currentState.state !== 'BLOCK') result = 'hit';
-    else result = 'block';
-  } else if (direction === 1 && player.x >= enemy.x && player.x+(player.width/2)-60 <= enemy.x+(enemy.width/2)) {
-    if (enemy.currentState.state !== 'BLOCK') result = 'hit';
-    else result = 'block';
+  var result = false;
+  if (enemy.currentState.state !== 'BLOCK') {
+    if (direction === 0 && player.x <= enemy.x && player.x+(player.width/2)+60 >= enemy.x+(enemy.width/2)) result = true;
+    else if (direction === 1 && player.x >= enemy.x && player.x+(player.width/2)-60 <= enemy.x+(enemy.width/2)) result = true;
   }
   return result;
 }
