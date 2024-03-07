@@ -683,7 +683,7 @@ function getFallFrameY(state, no, direction) {
 function throwMove(player, enemyThrown) {
   player.setState(states.THROW);
   player.enemies.forEach(enemy => {
-    if (enemy.currentState.state !== 'BLOCK' && this.player.strikeRange(player, enemy, player.direction) === true && enemyThrown == null) enemyThrown = enemy;
+    if (enemy.currentState.state !== 'BLOCK' && player.strikeRange(player, enemy, player.direction) === true && enemyThrown == null) enemyThrown = enemy;
   });
   if (enemyThrown !== null) {
     enemyThrown.setState(states.THROWN);
