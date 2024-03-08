@@ -91,7 +91,8 @@ export default class Player {
       } else if (this.currentState.state === 'FALL') {
         if (this.frameX === 0) {
 	  this.game.audioHit3.play();
-	  this.game.audioImpact2[this.voice].play();
+	  if (this.health <= 0) this.game.audioImpact3[this.voice].play();
+	  else this.game.audioImpact2[this.voice].play();
 	}
         else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'THROWN') {
