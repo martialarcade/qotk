@@ -35,30 +35,30 @@ window.addEventListener('load', function() {
       this.bloods = [];
       this.enemyThrown = null;
       //audio
-      this.audioOption = new Howl({src: ['./sfx/option.m4a', './sfx/option.ogg']});
-      this.audioSelect= new Howl({src: ['./sfx/select.m4a', './sfx/select.ogg']});
-      this.audioIntro= new Howl({src: ['./sfx/intro.m4a', './sfx/intro.ogg'], volume: 2});
-      this.audioStart = new Howl({src: ['./sfx/start.m4a', './sfx/start.ogg']});
-      this.audioFight = new Howl({src: ['./sfx/fight.m4a', './sfx/fight.ogg']});
-      this.audioHit1 = new Howl({src: ['./sfx/hit1.m4a', './sfx/hit1.ogg']});
-      this.audioHit2 = new Howl({src: ['./sfx/hit2.m4a', './sfx/hit2.ogg']});
-      this.audioHit3 = new Howl({src: ['./sfx/hit3.m4a', './sfx/hit3.ogg']});
-      this.audioFall = new Howl({src: ['./sfx/fall.m4a', './sfx/fall.ogg']});
-      this.audioBlock = new Howl({src: ['./sfx/block.m4a', './sfx/block.ogg']});
-      this.audioYouWin = new Howl({src: ['./sfx/you-win.m4a', './sfx/you-win.ogg']});
-      this.audioYouLose = new Howl({src: ['./sfx/you-lose.m4a', './sfx/you-lose.ogg']});
+      this.audioOption = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/option.m4a', 'https://martialarcade.github.io/qotk/sfx/option.ogg']});
+      this.audioSelect= new Howl({src: ['https://martialarcade.github.io/qotk/sfx/select.m4a', 'https://martialarcade.github.io/qotk/sfx/select.ogg']});
+      this.audioIntro= new Howl({src: ['https://martialarcade.github.io/qotk/sfx/intro.m4a', 'https://martialarcade.github.io/qotk/sfx/intro.ogg'], volume: 2});
+      this.audioStart = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/start.m4a', 'https://martialarcade.github.io/qotk/sfx/start.ogg']});
+      this.audioFight = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/fight.m4a', 'https://martialarcade.github.io/qotk/sfx/fight.ogg']});
+      this.audioHit1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/hit1.m4a', 'https://martialarcade.github.io/qotk/sfx/hit1.ogg']});
+      this.audioHit2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/hit2.m4a', 'https://martialarcade.github.io/qotk/sfx/hit2.ogg']});
+      this.audioHit3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/hit3.m4a', 'https://martialarcade.github.io/qotk/sfx/hit3.ogg']});
+      this.audioFall = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/fall.m4a', 'https://martialarcade.github.io/qotk/sfx/fall.ogg']});
+      this.audioBlock = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/block.m4a', 'https://martialarcade.github.io/qotk/sfx/block.ogg']});
+      this.audioYouWin = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/you-win.m4a', 'https://martialarcade.github.io/qotk/sfx/you-win.ogg']});
+      this.audioYouLose = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/you-lose.m4a', 'https://martialarcade.github.io/qotk/sfx/you-lose.ogg']});
       //audio impact
-      this.audioImpact_0_1 = new Howl({src: ['./sfx/impact-0-1.m4a', './sfx/impact-0-1.ogg']});
-      this.audioImpact_1_1 = new Howl({src: ['./sfx/impact-1-1.m4a', './sfx/impact-1-1.ogg']});
-      this.audioImpact_2_1 = new Howl({src: ['./sfx/impact-2-1.m4a', './sfx/impact-2-1.ogg']});
+      this.audioImpact_0_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-0-1.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-0-1.ogg']});
+      this.audioImpact_1_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-1-1.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-1-1.ogg']});
+      this.audioImpact_2_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-2-1.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-2-1.ogg']});
       this.audioImpact1 = [this.audioImpact_0_1, this.audioImpact_1_1, this.audioImpact_2_1];
-      this.audioImpact_0_2 = new Howl({src: ['./sfx/impact-0-2.m4a', './sfx/impact-0-2.ogg']});
-      this.audioImpact_1_2 = new Howl({src: ['./sfx/impact-1-2.m4a', './sfx/impact-1-2.ogg']});
-      this.audioImpact_2_2 = new Howl({src: ['./sfx/impact-2-2.m4a', './sfx/impact-2-2.ogg']});
+      this.audioImpact_0_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-0-2.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-0-2.ogg']});
+      this.audioImpact_1_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-1-2.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-1-2.ogg']});
+      this.audioImpact_2_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-2-2.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-2-2.ogg']});
       this.audioImpact2 = [this.audioImpact_0_2, this.audioImpact_1_2, this.audioImpact_2_2];
-      this.audioImpact_0_3 = new Howl({src: ['./sfx/impact-0-3.m4a', './sfx/impact-0-3.ogg']});
-      this.audioImpact_1_3 = new Howl({src: ['./sfx/impact-1-3.m4a', './sfx/impact-1-3.ogg']});
-      this.audioImpact_2_3 = new Howl({src: ['./sfx/impact-2-3.m4a', './sfx/impact-2-3.ogg']});
+      this.audioImpact_0_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-0-3.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-0-3.ogg']});
+      this.audioImpact_1_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-1-3.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-1-3.ogg']});
+      this.audioImpact_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-2-3.ogg']});
       this.audioImpact3 = [this.audioImpact_0_3, this.audioImpact_1_3, this.audioImpact_2_3];
     }
     update(deltaTime) {
