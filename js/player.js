@@ -70,7 +70,9 @@ export default class Player {
     //sprite animation
     if (this.frameTimer > this.frameInterval) {
       //audio
-      if (this.currentState.state === 'HIT') {
+      if (this.currentState.state === 'PUNCH1' || this.currentState.state === 'KICK1') {
+	if (this.frameX === 0) this.game.audioKiai1[this.voice].play();
+      } else if (this.currentState.state === 'HIT') {
         if (this.frameX === 0) {
           if (this.enemies[0].currentState.state === 'PUNCH1' || this.enemies[0].currentState.state === 'KICK1') {
 	    this.game.audioHit1.play();
