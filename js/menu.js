@@ -55,7 +55,7 @@ export default class Menu {
       this.currentState.handleInput(this.game.input, context);
     } else if (this.game.input.lastKey === 'PRESS pause') {
       document.getElementById("pause").value = 1;
-    } else if (this.game.fighter0.currentState.state === 'END' && (this.game.input.lastKey === 'PRESS a' || this.game.input.lastKey === 'PRESS b' || this.game.input.lastKey === 'PRESS c')) {
+    } else if ((this.game.fighter0.currentState.state === 'END' || this.game.fighter1.currentState.state === 'END') && (this.game.input.lastKey === 'PRESS a' || this.game.input.lastKey === 'PRESS b' || this.game.input.lastKey === 'PRESS c')) {
       this.game.input.lastKey = '';
       document.getElementById("pause").value = 1;
     }
