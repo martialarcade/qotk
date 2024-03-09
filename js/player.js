@@ -72,7 +72,7 @@ export default class Player {
       //audio
       if (this.currentState.state === 'PUNCH1' || this.currentState.state === 'KICK1') {
 	if (this.frameX === 0) this.game.audioKiai1[this.voice].play();
-      } else if (this.currentState.state === 'PUNCH2' || this.currentState.state === 'KICK2') {
+      } else if (this.currentState.state === 'PUNCH2' || this.currentState.state === 'KICK2' || this.currentState.state === 'JUMPKICK' || this.currentState.state === 'THROW') {
 	if (this.frameX === 0) this.game.audioKiai2[this.voice].play();
       } else if (this.currentState.state === 'PUNCH3' || this.currentState.state === 'KICK3') {
 	if (this.frameX === 0) this.game.audioKiai3[this.voice].play();
