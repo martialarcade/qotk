@@ -61,17 +61,17 @@ window.addEventListener('load', function() {
       this.audioImpact_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/impact-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/impact-2-3.ogg']});
       this.audioImpact3 = [this.audioImpact_0_3, this.audioImpact_1_3, this.audioImpact_2_3];
       //audio kiai
-      this.audioKiai_0_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-0-1.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-0-1.ogg']});
-      this.audioKiai_1_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-1-1.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-1-1.ogg']});
-      this.audioKiai_2_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-2-1.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-2-1.ogg']});
+      this.audioKiai_0_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-0-1.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-0-1.ogg']});
+      this.audioKiai_1_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-1-1.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-1-1.ogg']});
+      this.audioKiai_2_1 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-2-1.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-2-1.ogg']});
       this.audioKiai1 = [this.audioKiai_0_1, this.audioKiai_1_1, this.audioKiai_2_1];
-      this.audioKiai_0_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-0-2.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-0-2.ogg']});
-      this.audioKiai_1_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-1-2.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-1-2.ogg']});
-      this.audioKiai_2_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-2-2.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-2-2.ogg']});
+      this.audioKiai_0_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-0-2.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-0-2.ogg']});
+      this.audioKiai_1_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-1-2.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-1-2.ogg']});
+      this.audioKiai_2_2 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-2-2.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-2-2.ogg']});
       this.audioKiai2 = [this.audioKiai_0_2, this.audioKiai_1_2, this.audioKiai_2_2];
-      this.audioKiai_0_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-0-3.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-0-3.ogg']});
-      this.audioKiai_1_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-1-3.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-1-3.ogg']});
-      this.audioKiai_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/Kiai-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/Kiai-2-3.ogg']});
+      this.audioKiai_0_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-0-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-0-3.ogg']});
+      this.audioKiai_1_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-1-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-1-3.ogg']});
+      this.audioKiai_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-2-3.ogg']});
       this.audioKiai3 = [this.audioKiai_0_3, this.audioKiai_1_3, this.audioKiai_2_3];
     }
     update(deltaTime) {
