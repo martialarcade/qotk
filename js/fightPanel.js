@@ -33,7 +33,6 @@ export default class FightPanel {
     this.fighter1FrameX = Math.ceil(this.game.fighter1.health/45);
     this.health0.width = Math.ceil(this.game.fighter0.health/3);
     this.health1.width = Math.ceil(this.game.fighter1.health/3);
-    console.log(this.fighter0FrameX);
     //timer
     if (this.frameTimer > this.frameInterval) this.frameTimer = 0;
 		else this.frameTimer += deltaTime;
