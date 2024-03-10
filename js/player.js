@@ -106,7 +106,7 @@ export default class Player {
         else if (this.frameX === 3) this.game.audioFall.play();
       } else if (this.currentState.state === 'END' && this.fightertype === 'h' && this.health > this.enemies[0].health && this.frameX === 0) {
 	this.game.audioYouWin.play();
-      } else if (this.enemies[0].state === 'END' && this.fightertype === 'h' && this.health <= this.enemies[0].health && this.frameX === 0) {
+      } else if (this.currentState.state === 'END' && this.fightertype === 'k1' && this.health > this.enemies[0].health && this.frameX === 0) {
 	this.game.audioYouLose.play();
       }
       //walk direction
