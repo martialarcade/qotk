@@ -71,7 +71,7 @@ window.addEventListener('load', function() {
       this.audioKiai2 = [this.audioKiai_0_2, this.audioKiai_1_2, this.audioKiai_2_2];
       this.audioKiai_0_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-0-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-0-3.ogg'], volume: 3});
       this.audioKiai_1_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-1-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-1-3.ogg'], volume: 3});
-      this.audioKiai_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-2-3.ogg'], volume: 3});
+      this.audioKiai_2_3 = new Howl({src: ['https://martialarcade.github.io/qotk/sfx/kiai-2-3.m4a', 'https://martialarcade.github.io/qotk/sfx/kiai-2-3.ogg'], volume: 2});
       this.audioKiai3 = [this.audioKiai_0_3, this.audioKiai_1_3, this.audioKiai_2_3];
     }
     update(deltaTime) {
